@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Components/Navbar/navbar';
 import Hero from './Components/HeroBanner/Hero';
 import HeroWithNavbar from  "./Components/Navbar/navbar"
@@ -11,19 +11,26 @@ import MoreBenefitsSection from "./Components/MoreBenefit/MoreBenefit"
 import FAQ from "./Components/FAQ/FAQ"
 import GetStart from "./Components/GetStart/GetStart"
 import Footer from './Components/Footer/Footer';
+import FinancePopupForm  from "./Components/Form/PopUpForm"
 function App() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => setIsPopupOpen(false);
+
   return (
     <div  >
       {/* <Navbar/>
       <Hero/> */}
-      <HeroWithNavbar/>
-      <WhyEaseWithdraw/>
-      <RewardsTestimonials/>
-      <HowItWorks/>
-      <MoreBenefitsSection/>
-      <FAQ/>
-      <GetStart/>
-      <Footer/>
+      <HeroWithNavbar onTriggerPopup={openPopup}/>
+      <WhyEaseWithdraw onTriggerPopup={openPopup}/>
+      <RewardsTestimonials onTriggerPopup={openPopup}/>
+      <HowItWorks onTriggerPopup={openPopup}/>
+      <MoreBenefitsSection onTriggerPopup={openPopup}/>
+      <FAQ onTriggerPopup={openPopup}/>
+      <GetStart onTriggerPopup={openPopup}/>
+      <Footer onTriggerPopup={openPopup}/>
+      <FinancePopupForm isOpen={isPopupOpen} onClose={closePopup}/>
     </div>
   );
 }
