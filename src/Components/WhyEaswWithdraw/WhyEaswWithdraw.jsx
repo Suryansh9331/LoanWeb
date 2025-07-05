@@ -212,7 +212,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-const WhyEaseWithdraw = () => {
+const WhyEaseWithdraw = ({ onTriggerPopup }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -432,7 +432,9 @@ const WhyEaseWithdraw = () => {
                 Ready to unlock your crypto's potential?
               </p>
             </div>
-            <button className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 text-white font-bold px-12 py-6 rounded-3xl text-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40 relative overflow-hidden group">
+            <button 
+            onClick={onTriggerPopup}
+            className=" cursor-pointer bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 text-white font-bold px-12 py-6 rounded-3xl text-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40 relative overflow-hidden group">
               <span className="relative z-10">Get Started Today</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>

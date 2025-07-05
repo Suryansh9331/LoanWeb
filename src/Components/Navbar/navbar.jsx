@@ -285,6 +285,7 @@ const HeroWithNavbar = ({ onTriggerPopup }) => {
               style={{ transitionDelay: '0.2s' }}
             >
               <div
+              
                 className={`bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-purple-500/30 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-purple-500/40 ${
                   isScrolled ? 'w-10 h-10 text-lg' : 'w-12 h-12 text-xl'
                 }`}
