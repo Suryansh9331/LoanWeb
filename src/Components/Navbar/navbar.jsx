@@ -259,7 +259,7 @@ const HeroWithNavbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out transform ${
           isScrolled
             ? 'bg-white/98 backdrop-blur-lg shadow-lg shadow-purple-500/8'
-            : 'bg-gradient-to-r from-purple-500/5 to-white/95 backdrop-blur-xl'
+            : 'bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-xl'
         } ${
           isLoaded 
             ? 'translate-y-0 opacity-100' 
@@ -332,7 +332,7 @@ const HeroWithNavbar = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden pt-24 pb-18">
+      <div className="relative min-h-auto bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden pt-24 pb-18">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
           <div 
