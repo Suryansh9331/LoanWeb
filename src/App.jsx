@@ -1,38 +1,38 @@
-// src/App.jsx
-
-import React, { useState } from 'react';
-import Navbar from './Components/Navbar/navbar';
-import Hero from './Components/HeroBanner/Hero';
+import React from "react";
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeroWithNavbar from  "./Components/Navbar/navbar"
-import WhyEaseWithdraw from "./Components/WhyEaswWithdraw/WhyEaswWithdraw"
-import RewardsTestimonials from "./Components/RewardTestimonial/RewardTestimonial"
-import HowItWorks from "./Components/HowItWorks/HowItWorks"
-import MoreBenefitsSection from "./Components/MoreBenefit/MoreBenefit"
-import FAQ from "./Components/FAQ/FAQ"
-import GetStart from "./Components/GetStart/GetStart"
-import Footer from './Components/Footer/Footer';
-import FinancePopupForm  from "./Components/Form/PopUpForm"
-function App() {
+import Footer from  "./Components/Footer/Footer"
+import FinancePopupForm from  "./Components/Form/PopUpForm"
+
+import Home from "./pages/Home";
+import PrivacyPolicy from "./pages/privacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
+// import AboutUsFooter from "./pages/AboutUS"
+import Navbar from "./Components/Navbar/navbar";
+
+const App = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
 
   return (
-    <div  >
-      {/* <Navbar/>
-      <Hero/> */}
-      <HeroWithNavbar onTriggerPopup={openPopup}/>
-      <WhyEaseWithdraw onTriggerPopup={openPopup}/>
-      <RewardsTestimonials onTriggerPopup={openPopup}/>
-      <HowItWorks onTriggerPopup={openPopup}/>
-      <MoreBenefitsSection onTriggerPopup={openPopup}/>
-      <FAQ onTriggerPopup={openPopup}/>
-      <GetStart onTriggerPopup={openPopup}/>
-      <Footer onTriggerPopup={openPopup}/>
-      <FinancePopupForm isOpen={isPopupOpen} onClose={closePopup}/>
-    </div>
+    <Router>
+      <div>
+        <HeroWithNavbar onTriggerPopup={openPopup} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Terms-and-conditions" element={<TermsOfUse />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          {/* <Route path="/aboutus" element={<AboutUsFooter />} /> */}
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+        <Footer onTriggerPopup={openPopup} />
+        <FinancePopupForm isOpen={isPopupOpen} onClose={closePopup} />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
