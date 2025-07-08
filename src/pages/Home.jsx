@@ -10,7 +10,7 @@ import MoreBenefitsSection from "../Components/MoreBenefit/MoreBenefit"
 import FAQ from "../Components/FAQ/FAQ"
 import GetStart from "../Components/GetStart/GetStart"
 // import Footer from '../Components/Footer/Footer';
-// import FinancePopupForm  from "../Components/Form/PopUpForm"
+import FinancePopupForm  from "../Components/Form/PopUpForm"
 function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -28,8 +28,8 @@ function Home() {
       <MoreBenefitsSection onTriggerPopup={openPopup}/>
       <FAQ onTriggerPopup={openPopup}/>
       <GetStart onTriggerPopup={openPopup}/>
-      {/* <Footer onTriggerPopup={openPopup}/>
-      <FinancePopupForm isOpen={isPopupOpen} onClose={closePopup}/> */}
+      {/* <Footer onTriggerPopup={openPopup}/> */}
+       <FinancePopupForm isOpen={isPopupOpen} onClose={closePopup}/> 
     </div>
   );
 }
