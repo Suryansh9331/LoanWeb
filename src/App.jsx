@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeroWithNavbar from  "./Components/Navbar/navbar"
 import Footer from  "./Components/Footer/Footer"
 import FinancePopupForm from  "./Components/Form/PopUpForm"
-
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop"
 import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/privacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
@@ -20,6 +20,7 @@ const App = () => {
   return (
     <Router>
       <div>
+        <ScrollToTop/>
         <HeroWithNavbar onTriggerPopup={openPopup} />
         <Routes>
           <Route path="/" element={<Home />} />
